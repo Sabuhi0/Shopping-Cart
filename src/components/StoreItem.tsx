@@ -12,14 +12,14 @@ const StoreItem = ({id, name, price, image}: StoreItemProps) => {
   return (
     <section>
       <img className='w-full' src={image} alt="" />
-      <div className='bg-white p-5 rounded-br-xl rounded-bl-xl'>
-        <div className='flex justify-between items-center'>
+      <div className='p-5 bg-white rounded-br-xl rounded-bl-xl'>
+        <div className='flex items-center justify-between'>
           <span className='text-2xl'>{name}</span>
           <span className='text-xl text-gray-600'>{formatCurrency(price)}</span>
         </div>
         <div className='mt-4'>
           {quantity === 0 ? (
-            <button className='w-full p-2 text-center rounded-sm bg-slate-500 text-white'>Add To Cart</button>
+            <button className='w-full p-2 text-center text-white rounded-sm bg-slate-500'>Add To Cart</button>
           ): <div className='flex flex-col items-center gap-2'>
               <div className='flex gap-4'>
                 <button>-</button>
