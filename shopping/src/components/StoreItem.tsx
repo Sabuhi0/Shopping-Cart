@@ -1,4 +1,6 @@
 import { formatCurrency } from '../utilities/formatCurrency'
+import {AiOutlineMinus} from 'react-icons/ai'
+import {AiOutlinePlus} from 'react-icons/ai'
 
 type StoreItemProps = {
   id: number,
@@ -22,14 +24,14 @@ const StoreItem = ({id, name, price, image}: StoreItemProps) => {
             <button className='w-full p-2 text-center text-white rounded-sm bg-slate-500'>Add To Cart</button>
           ): <div className='flex flex-col items-center gap-2'>
               <div className='flex gap-4'>
-                <button>-</button>
+                <button><AiOutlineMinus size={22}/></button>
                 <h1>
                   <span className='text-2xl'>{quantity}</span> in cart
                 </h1>
-                <button>+</button>
+                <button><AiOutlinePlus  size={22}/></button>
               </div>
               <div className='flex items-center justify-center gap-2'>
-                <button>Remove</button>
+                <button className='bg-red-600 py-2 px-3 text-white rounded-sm hover:bg-red-700 transition-colors'>Remove</button>
               </div>
             </div>}
         </div>
