@@ -1,8 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { useShoppingCart } from '../context/ShoppingCartContext';
 
 const Navbar = () => {
+  const { openCart, cartQuantity } = useShoppingCart()
   return (
     <div className='shadow-md'>
       <div className='container mx-auto flex justify-between items-center'>
@@ -13,9 +15,9 @@ const Navbar = () => {
             <NavLink to='/about'>About</NavLink>
           </ul>
         </nav>
-        <button className='rounded-full w-12 h-12 relative'>
+        <button className='rounded-full w-12 h-12 relative' onClick={openCart}>
           <h1 className='w-6 h-6 rounded-full bg-red-600 text-white flex justify-center items-center absolute bottom-0 right-1 text-[15px]'>
-            3
+            {cartQuantity}
           </h1>
           <AiOutlineShoppingCart size={30} />
         </button>
