@@ -1,6 +1,7 @@
 import { formatCurrency } from '../utilities/formatCurrency'
 import {AiOutlineMinus} from 'react-icons/ai'
 import {AiOutlinePlus} from 'react-icons/ai'
+import { useShoppingCart } from '../context/ShoppingCartContext'
 
 type StoreItemProps = {
   id: number,
@@ -10,7 +11,8 @@ type StoreItemProps = {
 }
 
 const StoreItem = ({id, name, price, image}: StoreItemProps) => {
-  const quantity = 1;
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuanity, removeFromCart } = useShoppingCart()
+  const quantity = getItemQuantity(id);
   return (
     <section>
       <img className='w-full' src={image} alt="" />
@@ -21,17 +23,17 @@ const StoreItem = ({id, name, price, image}: StoreItemProps) => {
         </div>
         <div className='mt-4'>
           {quantity === 0 ? (
-            <button className='w-full p-2 text-center text-white rounded-sm bg-slate-500'>Add To Cart</button>
+            <button className='w-full p-2 text-center text-white rounded-sm bg-slate-500' onClick={() => increaseCartQuantity(id)}>Add To Cart</button>
           ): <div className='flex flex-col items-center gap-2'>
               <div className='flex gap-4'>
-                <button><AiOutlineMinus size={22}/></button>
+                <button onClick={() => decreaseCartQuanity(id)}><AiOutlineMinus size={22}/></button>
                 <h1>
                   <span className='text-2xl'>{quantity}</span> in cart
                 </h1>
-                <button><AiOutlinePlus  size={22}/></button>
+                <button onClick={() => increaseCartQuantity(id)}><AiOutlinePlus  size={22}/></button>
               </div>
               <div className='flex items-center justify-center gap-2'>
-                <button className='bg-red-600 py-2 px-3 text-white rounded-sm hover:bg-red-700 transition-colors'>Remove</button>
+                <button onClick={() => removeFromCart(id)} className='bg-red-600 py-2 px-3 text-white rounded-sm hover:bg-red-700 transition-colors'>Remove</button>
               </div>
             </div>}
         </div>
