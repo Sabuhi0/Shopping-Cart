@@ -15,12 +15,14 @@ const Navbar = () => {
             <NavLink to='/about'>About</NavLink>
           </ul>
         </nav>
-        <button className='rounded-full w-12 h-12 relative' onClick={openCart}>
-          <h1 className='w-6 h-6 rounded-full bg-red-600 text-white flex justify-center items-center absolute bottom-0 right-1 text-[15px]'>
-            {cartQuantity}
-          </h1>
-          <AiOutlineShoppingCart size={30} />
-        </button>
+        {cartQuantity > 0 && (
+          <button className='rounded-full w-12 h-12 relative' onClick={openCart}>
+            <h1 className='w-6 h-6 rounded-full bg-red-600 text-white flex justify-center items-center absolute bottom-0 right-1 text-[15px]'>
+              {cartQuantity}
+            </h1>
+            <AiOutlineShoppingCart size={30} />
+          </button>
+        )}
       </div>
     </div>
   )
