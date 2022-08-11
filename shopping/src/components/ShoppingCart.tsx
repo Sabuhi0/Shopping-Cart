@@ -1,5 +1,5 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import { FaRegWindowClose } from 'react-icons/fa'
+import { FaRegWindowClose } from 'react-icons/fa';
 import CartItem from "./CartItem";
 
 type ShoppingCartProps = {
