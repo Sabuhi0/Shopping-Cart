@@ -28,7 +28,7 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
                     </h1>
                 </div>
                 <div className="flex items-center gap-3">
-                    <h1>{ formatCurrency(item.price * quantity) }</h1>
+                    <h1 className="text-2xl">{ formatCurrency(item.price * quantity) }</h1>
                     <button className="border rounded-sm w-8 h-8 flex items-center justify-center transition-all hover:bg-red-500 hover:border-red-500 hover:text-white" onClick={() => removeFromCart(item.id)}>X</button>
                 </div>
             </div>
