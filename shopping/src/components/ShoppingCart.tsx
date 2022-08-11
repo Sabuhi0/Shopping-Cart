@@ -1,6 +1,8 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { FaRegWindowClose } from 'react-icons/fa';
 import CartItem from "./CartItem";
+import storeItems from "../data/data.json"
+import { formatCurrency } from "../utilities/formatCurrency";
 
 type ShoppingCartProps = {
     isOpen: boolean
@@ -18,6 +20,17 @@ const ShoppingCart = ({isOpen}: ShoppingCartProps) => {
                 {cartItems.map(item => (
                     <CartItem key={item.id} {...item}/>
                 ))}
+                <div className="flex justify-end">
+                    <h1 className="text-3xl font-bold">
+                        Total: {" "}
+                        {formatCurrency(
+                            cartItems.reduce((total, cartItems) => {
+                                const item = storeItems.find(i => i.id === cartItems.id)
+                                return total + (item?.price || 0) * cartItems.quantity
+                            }, 0)
+                        )}
+                    </h1>
+                </div>
             </div>
         </div>: null
     )
