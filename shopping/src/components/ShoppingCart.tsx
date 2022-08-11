@@ -14,7 +14,7 @@ const ShoppingCart = ({isOpen}: ShoppingCartProps) => {
                 <h1 className="text-2xl">Cart</h1>
                 <button className="cursor-pointer hover:scale-110" onClick={closeCart}><FaRegWindowClose size={25}/></button>
             </div>
-            <div className="pt-6">
+            <div className="flex flex-col gap-8 pt-6">
                 {cartItems.map(item => (
                     <CartItem key={item.id} {...item}/>
                 ))}
