@@ -23,7 +23,7 @@ const StoreItem = ({id, name, price, image}: StoreItemProps) => {
         </div>
         <div className='mt-4'>
           {quantity === 0 ? (
-            <button className='w-full p-2 text-center text-white rounded-sm bg-slate-500' onClick={() => increaseCartQuantity(id)}>Add To Cart</button>
+            <button className='w-full p-2 text-center text-white rounded-sm bg-slate-500 hover:bg-slate-700 transition-all' onClick={() => increaseCartQuantity(id)}>Add To Cart</button>
           ): <div className='flex flex-col items-center gap-2'>
               <div className='flex gap-4'>
                 <button onClick={() => decreaseCartQuanity(id)}><AiOutlineMinus size={22}/></button>
