@@ -15,7 +15,7 @@ const StoreItem = ({id, name, price, image}: StoreItemProps) => {
   const quantity = getItemQuantity(id);
   return (
     <section>
-      <img className='w-full' src={image} alt="" />
+      <img className='w-full h-[260px] object-cover' src={image} alt="" />
       <div className='p-5 bg-white rounded-br-xl rounded-bl-xl'>
         <div className='flex items-center justify-between'>
           <span className='text-2xl'>{name}</span>
