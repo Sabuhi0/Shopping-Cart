@@ -16,5 +16,11 @@
         "name": "Banana",
         "price": 1.05,
         "image": "https://projectorganic.com.au/wp-content/uploads/2021/06/bananas.jpg"
+    },
+    {
+        "id": 4,
+        "name": "iPhone 13 Pro",
+        "price": 1110,
+        "image": "https://i.insider.com/617ad55a46a50c0018d40cc9?width=700"
     }
 ]
