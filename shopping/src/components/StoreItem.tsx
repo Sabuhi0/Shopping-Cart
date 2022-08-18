@@ -1,7 +1,7 @@
-import { formatCurrency } from '../utilities/formatCurrency'
-import {AiOutlineMinus} from 'react-icons/ai'
-import {AiOutlinePlus} from 'react-icons/ai'
-import { useShoppingCart } from '../context/ShoppingCartContext'
+import { formatCurrency } from '../utilities/formatCurrency';
+import {AiOutlineMinus} from 'react-icons/ai';
+import {AiOutlinePlus} from 'react-icons/ai';
+import { useShoppingCart } from '../context/ShoppingCartContext';
 
 type StoreItemProps = {
   id: number,
